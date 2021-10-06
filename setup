@@ -1,0 +1,32 @@
+#!/bin/bash
+echo --------------------
+echo Installing Dev Tools
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chmod 755 /usr/local/share/zsh
+chmod 755 /usr/local/share/zsh/site-functions
+yes | brew cask install intellij-idea-ce
+yes | brew install docker
+yes | brew cask install java
+yes | brew install kafka
+yes | brew install git
+yes | brew cask install flutter
+yes | brew install python
+yes | brew install ant
+yes | brew install maven
+yes | brew install gradle
+yes | brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+yes | brew upgrade --cask
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh" 
+yes | brew install emacs
+yes | brew install aws
+yes | brew install postgresql
+yes | brew install docker
+docker --version
+yes | brew install docker-machine
+yes | brew install virtualbox --cask
+yes | docker-machine create --driver virtualbox default
+docker-machine env default
+eval $(docker-machine env default)
+yes | brew install watch
